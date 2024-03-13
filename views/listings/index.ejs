@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') -%>
+<body>
+    <b><h1>All listings</h1></b>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1"> 
+    <!-- it is going to adjuzt the diffrent size boxes in diffrent screen -->
+        <% for(let obj of allListings) {%>
+            <div class="card col">
+                <a href="/listings/<%= obj.id %>"><div class="card-img-overlay"></div><img class="card-img-top" src="<%= obj.image.url %>" style="height: 20rem" alt="listing-image"></a>
+                
+                <div class="card-body">
+                  <p class="card-text">
+                    <b><%= obj.title %></b>
+                </p>
+                <li>&#x20b9;<%= obj.price.toLocaleString("en-IN") %></li>
+                </div>
+              </div>
+              <!-- <form method="POST" action="/listings/<%= obj.id %>?_method=DELETE">
+    <button type="button" class="btn btn-primary">Delete</button>
+</form> -->
+              <% } %>
+    </div>
+</body>

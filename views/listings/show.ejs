@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate') -%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1>Listing details</h1>
+            <div class="card">
+                <img class="card-img-top show-img" src="<%= listing.image.url %>" alt="listing-image">
+                <div class="card-body">
+                  <h5 class="card-title"><%= listing.title %></h5>
+                  <p class="card-text"><%= listing.description %></p>
+                  <p><%= listing.location %></p>
+                  <p><%= listing.country %></p>
+                  <p>&#x20b9;<%= listing.price.toLocaleString("en-IN") %></p>
+                    <a href="/listings/<%= listing.id %>/edit" class="btn btn-dark add-btn">Edit</a>
+                    <a href="/listings/<%= listing.id %>/delete" class="btn btn-dark btn2">Delete</a>
+                </div>
+            </div>
+            </div>
+            </div>
+</body>
